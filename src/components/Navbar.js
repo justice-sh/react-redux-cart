@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 
 const Navbar = ({ amount }) => {
+
   return (
     <nav>
       <div className="nav-center">
