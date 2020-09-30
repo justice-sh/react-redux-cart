@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { INCREASE, DECREASE, REMOVE } from '../actions';
+import { increase, decrease, remove } from '../actions';
 
 const CartItem = ({ img, title, price, amount, remove, increase, decrease }) => {
   return (
@@ -34,9 +34,9 @@ const CartItem = ({ img, title, price, amount, remove, increase, decrease }) => 
 
 // can receive two arguments: dispatch and ownProps. Remember, the order matters.
 const mapDispatchToProps = (dispatch, { id, amount }) => ({
-  remove: () => dispatch({ type: REMOVE, payload: { id } }),
-  increase: () => dispatch({ type: INCREASE, payload: { id } }),
-  decrease: () => dispatch({ type: DECREASE, payload: { id, amount } }),
+  remove: () => dispatch(remove(id)),
+  increase: () => dispatch(increase(id)),
+  decrease: () => dispatch(decrease(id, amount)),
 });
 
 export default connect(null, mapDispatchToProps)(CartItem);

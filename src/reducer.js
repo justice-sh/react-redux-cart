@@ -28,10 +28,8 @@ const reducer = (state, action) => {
         return cartTotal;
       }, { total: 0, amount: 0 });
 
-
-
       total = parseFloat(total.toFixed(2));
-     return { ...state, total, amount};
+     return { ...state, total, amount };
    }
 
    return state;
